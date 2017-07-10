@@ -1,0 +1,53 @@
+$def with (form_valid)
+<html xmlns="http://www.w3.org/1999/html" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PACKY Admin</title>
+  <link href="static/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+  <link href="static/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="col-md-8">
+<form class="form-horizontal" action="/" method="POST">
+<fieldset>
+<legend>Agent Activation</legend>
+<div class=" form-group">
+  <label class="col-md-3 control-label" for="username">Username</label>
+  <div class="col-md-3">
+  <input id="username" name="username" type="text" placeholder="" class="form-control input-md">
+
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-3 control-label" for="password">Password</label>
+  <div class="col-md-3">
+    <input id="password" name="password" type="password" placeholder="" class="form-control input-md">
+
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-3 control-label" for="activate"></label>
+  <div class="col-md-3">
+    <button id="activate" class="btn btn-success">Activate</button>
+  </div>
+</div>
+
+</fieldset>
+  <p class="text-danger hidden" id="username-warning">Username cannot be empty!</p>
+  <p class="text-danger hidden" id="password-warning">Password cannot be empty!</p>
+  <p class="text-danger hidden" id="server-error">Your credentials appear to be incorrect, try logging in again!</p>
+</form>
+</div>
+<!--form name="main" method="post">
+  $# if not form.valid: <p class="error">Password incorrect, try again:</p>
+  $# :form.render()
+</form-->
+<script src="static/lib/jquery/dist/jquery.min.js"></script>
+<script src="static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="static/js/index.js"></script>
+</body>
+</html>

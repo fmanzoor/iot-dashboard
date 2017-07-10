@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Packy: Control Panel</title>
+    <link href="../static/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="../static/lib/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../static/lib/bootstrap/dist/css/bootstrap-formhelpers.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div style="height: 100px;">
+        <!-- Not the best way but it works -->
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+              <form class="form-horizontal" id="ip-settings">
+                  <fieldset>
+                      <legend>IP Settings</legend>
+                      <p class="text-danger hidden" id="ip-settings-warning">Your settings don't appear valid, try again!</p>
+                      <p class="text-danger hidden" id="ip-settings-error">Your request did not go through, try again!</p>
+                      <p class="text-success hidden" id="ip-settings-success">Your settings will be applied soon!</p>
+                      <div class="form-group">
+                          <label class="col-md-4 control-label" for="ip-settings-dhcp"></label>
+                          <div class="col-md-4">
+                              <label class="checkbox-inline" for="ip-settings-dhcp">
+                                  <input type="checkbox" name="ip_settings_dhcp"
+                                         id="ip-settings-dhcp" value="1">DHCP</label>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-md-4 control-label" for="ip-settings-ipaddress">IP Address</label>
+                          <div class="col-md-8">
+                              <input id="ip-settings-ipaddress" name="ip_settings_ipaddress"
+                                     type="text" placeholder="192.168.42.42" class="form-control input-md">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-md-4 control-label" for="ip-settings-subnet">Subnet</label>
+                          <div class="col-md-8">
+                              <input id="ip-settings-subnet" name="ip_settings_subnet"
+                                     type="text" placeholder="24" class="form-control input-md">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-4 control-label" for="ip-settings-gateway">Gateway IP</label>
+                          <div class="col-md-8">
+                              <input id="ip-settings-gateway" name="ip_settings_gateway"
+                                     type="text" placeholder="192.168.42.1" class="form-control input-md">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-md-6 control-label" for="ip-settings-apply"></label>
+                          <div class="col-md-6">
+                              <button id="ip-settings-apply" name="ip_settings_apply"
+                                      class="btn btn-success">Apply</button>
+                          </div>
+                      </div>
+                  </fieldset>
+              </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+              <form class="form-horizontal">
+                  <fieldset>
+                      <legend>System Restart</legend>
+                      <div class="form-group">
+                          <label class="col-md-4 control-label" for="system-restart-button"></label>
+                          <div class="col-md-4">
+                              <button class="btn btn-danger btn-primary" id="system-restart-button">Restart</button>
+                          </div>
+                      </div>
+                  </fieldset>
+              </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+              <form class="form-horizontal">
+                  <fieldset>
+                      <legend>System Reset</legend>
+                      <div class="form-group">
+                          <label class="col-md-4 control-label" for="system-reset-button"></label>
+                          <div class="col-md-4">
+                              <button id="system-reset-button" name="system-reset-button"
+                                      class="btn btn-danger">Reset</button>
+                          </div>
+                      </div>
+                  </fieldset>
+              </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+              <form class="form-horizontal" id="timezone-settings">
+                  <fieldset>
+                      <legend>Timezone Settings</legend>
+                      <p class="text-danger hidden" id="timezone-settings-warning">Your settings don't appear valid, try again!</p>
+                      <p class="text-danger hidden" id="timezone-settings-error">Your request did not go through, try again!</p>
+                      <p class="text-success hidden" id="timezone-settings-success">Your settings will be applied soon!</p>
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="timezone-settings-country">Country</label>
+                          <div class="col-md-9">
+                              <select id="timezone-settings-country" name="timezone_settings_country"
+                                      class="form-control bfh-countries" data-country="US">
+                              </select>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="timezone-settings-timezone">Timezone</label>
+                          <div class="col-md-9">
+                              <select id="timezone-settings-timezone" name="timezone_settings_timezone"
+                                      class="form-control bfh-timezones" data-country="timezone-settings-country">
+                              </select>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-md-6 control-label" for="timezone-settings-apply"></label>
+                          <div class="col-md-6">
+                              <button id="timezone-settings-apply" name="timezone_settings_apply"
+                                      class="btn btn-success">Apply</button>
+                          </div>
+                      </div>
+                  </fieldset>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+<script src="../static/lib/jquery/dist/jquery.min.js"></script>
+<script src="../static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../static/lib/bootstrap/dist/js/bootstrap-formhelpers.min.js"></script>
+<script src="../static/lib/bootstrap/dist/js/bootstrap-confirmation.min.js"></script>
+<script src="../static/js/admin.js"></script>
+</body>
+</html>
