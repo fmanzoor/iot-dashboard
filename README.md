@@ -1,8 +1,8 @@
 # IoT Dashboard
 
 This is a sample dashboard with minimal features and functionality. To get this up
-and running, you just need to install [Web.py](http://webpy.org) and execute `python server.py`
-from your terminal.
+and running, you just need to install [Web.py](http://webpy.org), execute `python server.py`
+from your terminal and point your browser to [http://localhost:8080/admin/](http://localhost:8080).
 
 #TODO
 
